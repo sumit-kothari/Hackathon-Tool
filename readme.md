@@ -31,5 +31,5 @@ This tool can be used to host Hackathons, following are few features supported:
 
 - `pip install -r requirements.txt`
 - Update AWS keys and path in `database.py` & `constants.py`
-- `python app.py`
+- `python application.py`
 
