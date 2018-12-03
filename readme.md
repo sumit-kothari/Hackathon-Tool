@@ -13,7 +13,7 @@ This tool can be used to host Hackathons, following are few features supported:
 - **Competition Details**
 - **Rules page**
 
-#### [Screenshot][1]
+#### [Screenshot](/screenshots)
 
 ---
 
@@ -35,5 +35,3 @@ This tool can be used to host Hackathons, following are few features supported:
 - Update AWS keys and path in `database.py` & `constants.py`
 - `python app.py`
 
-
-[1]: [https://github.com/sumit-kothari/Hackathon-Tool/tree/master/screenshots]
