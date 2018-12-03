@@ -1,0 +1,130 @@
+{% extends "common/base.html" %}
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %}
+
+{% block last_nav_link %} 
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %} 
+{% endblock %}
+
+{% block content %}
+
+<div id="index_page">
+
+    <div class="mdl-grid">
+
+        <div class="mdl-layout-spacer"></div>
+
+        <div class="mdl-cell mdl-cell--10-col team_register_links">
+            
+            <div class="mdl-grid">   
+
+                {% if final_nav_header == 'signin' %}
+                    <a href="/signup" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    Register As Individual
+                    </a>
+                {% endif %}
+
+                <a href="/create_team" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Team
+                </a>
+
+                <a href="/rules" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Rules
+                </a>
+                
+            </div>
+
+            <hr>
+           
+        </div>
+
+        <div class="mdl-layout-spacer"></div>
+    </div>
+   
+    <div class="data-tiles">
+        <div class="mdl-grid" >
+
+            <div class="mdl-layout-spacer"></div>
+
+            <div class="mdl-cell mdl-cell--5-col">
+                
+                <div class="demo-card-square mdl-card mdl-shadow--2dp" id="competition">
+                    <div class="mdl-card__title mdl-card--expand" ></div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/competitions" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--disabld">
+                            Click Here 
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mdl-cell mdl-cell--5-col">
+                
+                <div class="demo-card-square mdl-card mdl-shadow--2dp" id="quiz">
+                    <div class="mdl-card__title mdl-card--expand" ></div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/quiz_page" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--disabld">
+                            Click Here 
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mdl-layout-spacer"></div>
+        </div>
+
+        <div class="mdl-grid">
+        
+            <div class="mdl-layout-spacer"></div>
+
+            <div class="mdl-cell mdl-cell--5-col">
+        
+                <div class="demo-card-square mdl-card mdl-shadow--2dp" id="learning_board">
+                    <div class="mdl-card__title mdl-card--expand"></div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/learning_board" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Click Here 
+                        </a>
+                    </div>
+                </div>
+        
+            </div>
+        
+            <div class="mdl-cell mdl-cell--5-col">
+        
+                <div class="demo-card-square mdl-card mdl-shadow--2dp" id="discussion">
+                    <div class="mdl-card__title mdl-card--expand"></div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/discussion" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Click Here 
+                        </a>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    
+    </div>
+
+    <dialog class="mdl-dialog" id="join_team_dialog">
+        <div class="mdl-dialog__content">
+            <h4>
+                Please drop a mail to anyone@test.com, to add a new member to your team
+            </h4>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close">Okay</button>
+        </div>
+    </dialog>
+
+</div>
+
+{% endblock %}

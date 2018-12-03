@@ -1,0 +1,56 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+{% block last_nav_link %}
+<a class="mdl-navigation__link" href="/signin">Login</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--6-col">
+        <h2>Register</h2>
+        <form action="{{ url_for('signup_page.submit_signup_data') }}" method="post" id="signup-form" autocomplete="off">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" id="user_email" name="user_email" autocomplete="off"/>
+                <label class="mdl-textfield__label" for="user_email">Email...</label>
+                <span class="mdl-textfield__error">Please provide your correct Email Id!</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" pattern="[A-Za-z0-9]{6,25}$" id="user_name" name="user_name" autocomplete="off"/>
+                <label class="mdl-textfield__label" for="user_name">Username...</label>
+                <span class="mdl-textfield__error">Please provide a unique username (between 6-25 alphanumeric chars)!</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="password" pattern="[A-Za-z0-9]{6,25}$" id="user_password"
+                    name="user_password" />
+                <label class="mdl-textfield__label" for="user_password">Password...</label>
+                <span class="mdl-textfield__error">Password can be only alphanumeric and between 6-25 chars!</span>
+            </div>
+
+            <br>
+            <br>
+
+            <p class="a-color-blue"><i>
+                Note: If your email id is invalid, your registration might be cancelled.
+                <br>
+                <a href='/contactus'>Contact Us</a>, if any doubt.</i></p>
+
+            <div>
+                <br></br>
+                <!-- Colored raised button -->
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="signup-button">Register</button>
+            </div>
+
+        </form>
+    </div>
+    
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+{% block last_nav_link %}
+<a class="mdl-navigation__link" href="/signup">Register</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--6-col">
+        <h2>Login</h2>
+        <!-- Numeric Textfield with Floating Label -->
+        <form action="{{ url_for('signin_page.submit_signin_data') }}" method="post" id="signin-form" autocomplete="off">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="user_email" name="user_email" autocomplete="off"/>
+                <label class="mdl-textfield__label" for="user_email">Email...</label>
+                <!-- <span class="mdl-textfield__error">Input is not a vaild Email Id!</span> -->
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input required class="mdl-textfield__input" type="password" pattern="[A-Za-z0-9]{6,25}$" id="user_password"
+                    name="user_password" />
+                <label class="mdl-textfield__label" for="user_password">Password...</label>
+                <!-- <span class="mdl-textfield__error">Input can be only alphanumeric and between 6-25 chars!</span> -->
+            </div>
+
+            <div>
+            <br>
+                <a href='/contactus'>Contact Us</a>, if any login issue.</i></div>
+
+            <div>
+                <br></br>
+                <!-- Colored raised button -->
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="signin-button">Login</button>
+            </div>
+
+        </form>
+    </div>
+    
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+{% endblock %}

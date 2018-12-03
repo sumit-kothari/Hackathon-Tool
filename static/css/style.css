@@ -1,0 +1,365 @@
+a {
+    color: blue;
+}
+
+#blockBrowserErrorDiv {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background: #fff;
+    display: block;
+}
+
+.mdl-layout-title a {
+    font-size: 1em;
+}
+
+.mdl-layout__content {
+    background: linear-gradient(rgba(217, 218, 239, 0.35), rgba(32, 32, 183, 0.5));
+}
+
+.mdl-layout__content .mdl-grid {
+    background: #fff;
+}
+
+#signin-form .mdl-textfield, #signup-form .mdl-textfield, #profile_update-form .mdl-textfield {
+    width: 100%;
+}
+
+#signin-form #signin-button, #signup-form #signup-button {
+    float: right;
+    width: 30%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+}
+
+#home_content .home_content_image {
+  height: 550px;
+}
+
+#index_page .mdl-grid {
+    background: transparent;
+}
+
+#index_page .mdl-card {
+    height: 200px;
+    width: 80%;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+}
+
+#index_page h2 {
+    color: rgb(63,81,181);
+    text-transform: uppercase;
+}
+
+#index_page #competition {
+    background: url("/static/images/Competition-Card_1024pxX748px.png");
+}
+
+#index_page #quiz {
+    background: url("/static/images/Quiz-Card_1024pxX748px_v1.png");
+}
+
+#index_page #learning_board {
+    background: url("/static/images/Learning-Resources-Card_1024pxX748px.png");
+}
+
+#index_page #discussion {
+    background: url("/static/images/Discussion-Forun-Card_1024pxX748px_v1.png");
+}
+
+#index_page .mdl-card__actions {
+    background-color: #000000;
+    opacity: 0.7;
+}
+
+#index_page .mdl-card__actions a {
+    color: #fff;
+}
+
+.mdl-layout__header {
+    background: url("/static/images/Header-banner_1366pxX70px.png");
+}
+
+.mdl-layout__header a {
+    color: #000000 !important;
+}
+
+.mdl-layout__header-row {
+    padding: 0px;
+}
+
+.mdl-layout__header .mdl-layout-title a {
+    display: inline !important;
+}
+
+.mdl-layout__tab-bar-button {
+    background: url("/static/images/Header-banner_1366pxX70px.png");
+}
+
+.mdl-layout__tab-bar-button {
+    background: url("/static/images/Header-banner_1366pxX70px.png");
+}
+
+.mdl-layout__tab-bar-container, .mdl-layout__tab-bar{
+    background: url("/static/images/Header-banner_1366pxX70px.png") !important;
+}
+
+#competition_page .mdl-card__title {
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+}
+
+#competition_page .competition_card {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#competition_page .mdl-grid {
+    margin: 5px;
+}
+
+#competition_page h3 {
+    margin: 0px;
+}
+
+#data .dataset_card, #submission .submission_card {
+    margin: auto;
+    width: 60%;
+    min-height: 100px;
+}
+
+#data .mdl-card__title, #submission .mdl-card__title {
+    background: url("/static/images/Header-banner_1366pxX70px.png") !important;
+}
+
+#submission .submitbutton {
+    float: right;
+    font-size: 18px;
+    min-width: 200px;
+    background: url("/static/images/Header-banner_1366pxX70px.png") !important;
+}
+
+#submission .loader_design {
+    width: 100%;
+    margin-top: 15px; 
+    height: 10px;
+}
+
+#submission #competition_submission_loader {
+    display: none;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#submission table td {
+    padding: 5px;
+}
+
+#competition_submission_error_page li {
+    font-size: 18px;
+}
+
+.mdl-mini-footer {
+    padding: 0px !important;
+    padding-left: 10px !important;
+}
+
+#learning-board li a {
+    color: #000000;
+    line-height: 30px;
+}
+
+#create_team_page .custom-dropdown {
+    margin-top: 40px;
+}
+
+#create_team_page .custom-dropdown select {
+    min-width: 150px;
+}
+
+.color_error {
+    color: #d50000;
+}
+
+.mdl-layout__content {
+    overflow-y: initial !important;
+    overflow-x: initial !important;
+}
+
+.mdl-mini-footer {
+    min-height: 36px;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid gray;
+}
+
+#data a {
+    color: green !important;
+}
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after {
+    background: black !important;
+}
+
+.app-header-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
+
+.app-header-sub-title {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.mdl-layout-title {
+    display: inline-flex;
+}
+
+#home_page a{
+    font-size: 24px;
+    color: green;
+}
+
+#overview table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+#overview table thead tr {
+    background-color: rgb(63,81,181);
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#overview table tbody tr {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.home_page_class .mdl-card {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+.home_page_class h1, h3 {
+    color: rgb(63,81,181);
+}
+
+.home_page_class #competition {
+    height: 200px !important;
+}
+
+.home_page_class .mdl-card__actions {
+    background-color: #fff !important;
+    opacity: 1 !important;
+}
+
+.team_register_links a, .team_register_links button {
+    margin-right: 10px;
+    text-transform: none;
+    font-size: 16px;
+}
+
+.mdl-dialog {
+    width: 450px;
+}
+
+#sub-signin-form input, #sub-signin-form button {
+    max-width: 200px;
+}
+
+#sub-signin-form .mdl-textfield {
+    width: auto !important;
+}
+
+#sub-signin-form > div, #sub-signin-form > span {
+    margin-left: 20px;
+}
+
+#header_menu a {
+    line-height: initial !important;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#demo-menu-lower-right {
+    text-transform: none;
+}
+
+#contact-us-page a, #about-us-page a, #faq_page a {
+    color: green !important;
+}
+
+#about-us-page .mdl-grid {
+    background: transparent;
+}
+
+#about-us-page img {
+    width: 100%;
+    height: 100%;
+}
+
+#discussion_rules_dialog {
+    width: 70%;
+}
+
+.mdl-dialog__content {
+    color: #000000;
+}
+
+.mdl-mini-footer a {
+    color: #c0c0ce;
+}
+
+.create_team_member_info {
+    color: gray;
+    font-size: 12px;
+}
+
+.font-big {
+    font-size: 18px;
+}
+
+.a-color-blue a {
+    color: blue;
+}
+
+#index_page .team_register_links .mdl-button, #overview .team_register_links .mdl-button {
+    font-size: 20px;
+}
+
+.mdl-card a span {
+    font-size: 12px;
+    text-transform: none;
+}
+
+.new_quiz_text {
+    margin-right: 0px;
+    text-transform: none;
+    font-size: initial;
+}

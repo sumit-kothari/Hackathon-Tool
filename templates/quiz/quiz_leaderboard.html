@@ -1,0 +1,45 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+
+	<div class="mdl-cell mdl-cell--10-col">
+		<h2>Quiz Leader Board (Top 10)</h2>
+		<h5>Updated on 26-06-2018:20:00</h5> 
+		<div class="demo-list-action mdl-list" style="width:100%;">
+		
+			{% for data in quiz_data %}
+		
+			<div class="mdl-list__item">
+				<span class="mdl-list__item-primary-content">
+					<i class="material-icons mdl-list__item-avatar">person</i>
+					<span>{{data["username"]}}</span>
+				</span>
+				<span class="mdl-list__item-secondary-action">
+					Score: {{data["calculated_score"]}}
+				</span>
+			</div>
+		
+			{% endfor %}
+
+			<!-- <h4 > Will be updated on Monday. </h4> -->
+		</div>
+	</div>
+
+	<div class="mdl-layout-spacer"></div>
+</div>
+
+
+{% endblock %}

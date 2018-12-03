@@ -1,0 +1,36 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+<a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid" id="competition_submission_error_page">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+        <h2>Unable to submit your submission</h2>
+
+        <h4>Could be because of following reasons:</h4>
+        <ul> 
+            <li>R or Python Code file missing </li>
+            <li>Submission file (.csv) missing </li>
+            <li>Your team does not have access to make submission for this competition </li>
+            <li>Server's load very high </li>
+        </ul>
+            
+        <h4>
+            Please try again; back to 
+            <a style="color: blue;" href="/competition_detail/{{competition_id}}">competition page</a>
+        </h4>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

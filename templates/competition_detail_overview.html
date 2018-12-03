@@ -1,0 +1,140 @@
+{% extends "common/base_template.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block tabs %} 
+{% if leaderboard %}
+<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+    <!-- <a href="#overview" class="mdl-layout__tab">Overview</a>
+    <a href="#data" class="mdl-layout__tab">Data</a>
+    <a href="#submission" class="mdl-layout__tab">Submission</a>
+    <a href="#leaderboard" class="mdl-layout__tab is-active">Leaderboard</a>
+    <a href="#other" class="mdl-layout__tab">FAQ</a> -->
+</div>
+{% else %}
+<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+    <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
+    <!-- <a href="#data" class="mdl-layout__tab">Data</a>
+    <a href="#submission" class="mdl-layout__tab">Submission</a>
+    <a href="#leaderboard" class="mdl-layout__tab">Leaderboard</a>
+    <a href="#other" class="mdl-layout__tab">FAQ</a> -->
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<main class="mdl-layout__content" style="width: 100%;">
+    <dialog class="mdl-dialog" id="join_team_dialog">
+        <div class="mdl-dialog__content">
+            <h4>
+                Please drop a mail to us, to add a new member to your team
+            </h4>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close">Okay</button>
+        </div>
+    </dialog>
+
+    <div class="mdl-layout__tab-panel {{tab_active.overview}}" id="overview">
+        
+        <div class="mdl-grid">
+        
+            <div class="mdl-layout-spacer"></div>
+        
+            <div class="mdl-cell mdl-cell--8-col team_register_links">
+        
+                <div class="mdl-grid">
+        
+                    {% if final_nav_header == 'signin' %}
+                        <a href="/signup" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        Register As Individual
+                        </a>
+                    {% endif %}
+
+                    <a href="/create_team" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    Team
+                    </a>
+
+                    <!-- <a id="join_team" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    Join Team
+                    </a>
+ -->
+                    <a href="/rules" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    Rules
+                    </a>
+        
+                </div>
+        
+                <hr>
+        
+            </div>
+        
+            <div class="mdl-layout-spacer"></div>
+        </div>
+        
+        
+        <div class="mdl-grid">
+        
+            <div class="mdl-layout-spacer"></div>
+        
+            <div class="mdl-cell mdl-cell--8-col">
+                <form action="{{ url_for('signin_page.submit_signin_data') }}" method="post" id="sub-signin-form">
+                
+                    <h4>Please login with your Email Id and Team Name</h4>
+                    <h5 class="a-color-blue">If you are not member of any team, please <a href="/create_team">Create your team</a></h5>
+
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input required autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="user_email"
+                            name="user_email" />
+                        <label class="mdl-textfield__label" for="user_email">Email...</label>
+                   </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input required autocomplete="off" class="mdl-textfield__input" type="password" id="user_password" name="user_password"
+                        />
+                        <label class="mdl-textfield__label" for="user_password">Password...</label>
+                    </div>
+                
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input required autocomplete="off" class="mdl-textfield__input" type="text" id="user_team" name="user_team"
+                        />
+                        <label class="mdl-textfield__label" for="user_password">Team Name...</label>
+                    </div>
+                    
+                    <span>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="signin-button">Sign In</button>                    
+                    </span>
+            
+                    <hr>
+                </form>
+
+            </div>
+
+            <div class="mdl-layout-spacer"></div>
+        </div>
+
+        <div class="mdl-grid">
+        
+            <div class="mdl-layout-spacer"></div>
+        
+            <div class="mdl-cell mdl-cell--8-col">
+                {{competition_data['competition_detail_faq_overview']}}
+            </div>
+
+            <div class="mdl-layout-spacer"></div>
+        </div>
+
+    </div>
+
+</main>
+
+ {% endblock %}

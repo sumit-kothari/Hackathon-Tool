@@ -1,0 +1,101 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid" id="create_team_page">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--7-col">
+        <h4>Create Team</h4>
+        
+        <form action="{{ url_for('teams_page.create_team_submit') }}" method="post">
+            
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                    <h6>Team details</h6>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input required autocomplete="off" class="mdl-textfield__input" type="text" pattern="[A-Za-z0-9]{6,25}$" id="team_name" name="team_name" />
+                        <label class="mdl-textfield__label" for="team_name">Unique Team Name...</label>
+                        <span class="mdl-textfield__error">Input can be only alphanumeric and between 6-25 chars!</span>
+                    </div>
+
+                    <div class="custom-dropdown">
+                        <p>Select Competition</p>
+                        <select id='team_competition_id' name='team_competition_id'>
+                            <option value="4">Football Cup</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--6-col">
+                    <h6>Team members details</h6>
+                    <p class="create_team_member_info">Minimum 1 and maximum 5 members can be a part of team</p>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input required autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_1" name="member_1" value="{{current_member_email}}"  />
+                        <label class="mdl-textfield__label" for="member_1">Email Id (Team Member 1)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+                
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_2" name="member_2" />
+                        <label class="mdl-textfield__label" for="member_2">Email Id (Team Member 2)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+            
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_3" name="member_3" />
+                        <label class="mdl-textfield__label" for="member_3">Email Id (Team Member 3)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+            
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_4" name="member_4" />
+                        <label class="mdl-textfield__label" for="member_4">Email Id (Team Member 4)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+            
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_5" name="member_5" />
+                        <label class="mdl-textfield__label" for="member_5">Email Id (Team Member 5)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+                
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="display: none">
+                        <input autocomplete="off" class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="member_6" name="member_6" />
+                        <label class="mdl-textfield__label" for="member_6">Email Id (Team Member 6)...</label>
+                        <span class="mdl-textfield__error">Input is not a vaild Email Id!</span>
+                    </div>
+                    <br>
+                
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="create-team-button">Create Team</button>
+                </div>
+            
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

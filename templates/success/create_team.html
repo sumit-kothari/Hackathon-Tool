@@ -1,0 +1,34 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+        <h2>Thanks! Your team is created successful</h2>
+        <br>
+
+		<div class="font-big a-color-blue">
+
+			You now have access and can participate in <a href='/competitions'>competition</a> 
+
+        </div>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.png')}}" type="image/png" sizes="16x16">
+    
+    {% block head %}
+    <title>Hacksprint</title>
+    {% endblock %}
+
+    <script src="{{url_for('static', filename='js/ua-parser.min.js')}}"></script>
+
+    <script type="text/javascript">
+        function blockBrowser() {
+            var allowedBrowers = ['Firefox', 'Chrome']
+
+            var parser = new UAParser();
+
+            var browserName = parser.getResult().browser.name;
+
+
+            if(allowedBrowers.indexOf(browserName) < 0)
+            {  
+                console.log("This website is best viewed in Chrome or Firefox browser");
+
+                // document.write("This website is best viewed in Chrome or Firefox browser");
+                document.getElementsByTagName('body')[0].innerHTML = "<h3>Please visit this website in Google Chrome or Firefox browser</h3>"
+            } else {
+                setTimeout(function(){
+                    document.getElementById('blockBrowserErrorDiv').style.display = "none";
+                },100);
+            }
+
+            console.log('good browser')
+        }
+
+
+        try {
+            blockBrowser()
+        } catch(err) {
+            console.log(err);
+            console.log("This website is best viewed in Chrome or Firefox browser");
+
+            document.getElementById('blockBrowserErrorDiv').style.display = "block";
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dialog-polyfill.css')}}" />
+
+    <script defer src="{{url_for('static', filename='js/dialog-polyfill.js')}}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style_template.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}" />
+
+    <script defer src="{{url_for('static', filename='js/script.js')}}"></script>
+
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='blockBrowserErrorDiv'>
+        <h3>Please visit this website in Chrome or Firefox browser</h3>
+    </div>
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">
+                    <a class="mdl-navigation__link" href="/">
+                        {% block nav_title %}{% endblock %}
+                    </a>
+                
+                </span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    
+                    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button">
+                        Quick Links
+                    </button>
+                    
+                    <ul id="header_menu" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/">Home</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/about">About Us</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/rules">Rules</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/create_team">Team</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/profile_update">Profile</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/learning_board">Learning Resources</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/competitions">Competitions</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" target="_blank" href="/quiz_page">Quiz</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" target="_blank" href="/quiz_leaderboard">Quiz Leaderboard</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" target="_blank" href="/discussion">Discussion</a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/faq">FAQs</a>
+                        </li>                    
+                        <li class="mdl-menu__item">
+                            <a class="mdl-navigation__link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    {% block last_nav_link %}{% endblock %}
+                </nav>
+            </div>
+
+            {% block tabs %}{% endblock %}
+
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li>
+                        By using this site you agree that we can place cookies on your device.
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="mdl-mini-footer__right-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li>
+                        <span>Best viewed in Chrome or Firefox browser</span>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

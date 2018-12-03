@@ -1,0 +1,73 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+
+	<div class="mdl-cell mdl-cell--10-col">
+		<h2>Quiz</h2>
+		<p class="font-big"> Quiz will be conducted once a week on <b>every Friday</b>. 
+			<br>
+			Participants need to participate individually in the quiz and not as a team. 
+			<br>
+			Questions are multiple choice type (MCQs). 
+			<br>
+			Each question has only ONE correct answer. 
+			<br>
+			Winners will be announced on a weekly basis and points will be allocated individually. Points will be given based on the number of correct answers
+			and early submissions during the day.</p>
+	</div>
+
+	<div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid" >
+
+	<dialog class="mdl-dialog" id="quiz_rules_dialog">
+		<div class="mdl-dialog__content">
+			{{quiz_rules_html}}
+		</div>
+		<div class="mdl-dialog__actions">
+			<button type="button" class="mdl-button close">Okay</button>
+		</div>
+	</dialog>
+
+	<!-- <iframe src="{{iframe_url}}" style="min-height:550px"></iframe> -->
+	
+</div>
+
+
+<script>
+
+	function quiz_rules() {
+		var dialog = document.querySelector('#quiz_rules_dialog');
+
+		if (dialog) {
+			if (!dialog.showModal) {
+				dialogPolyfill.registerDialog(dialog);
+			}
+
+			dialog.querySelector('.close').addEventListener('click', function () {
+				dialog.close();
+			});
+
+			dialog.showModal();
+		}
+	}
+
+	setTimeout(quiz_rules, 1000);
+
+</script>
+
+{% endblock %}

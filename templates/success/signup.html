@@ -1,0 +1,58 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid" id='signup-success'>
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+        <h2>Thanks! Your registration is successful</h2>
+        <br>
+
+		<ul class="font-big a-color-blue">
+			<li>
+				Request you to wait for 10 minutes, To allow the application to update your record and then proceed for <a href='/create_team'>creating the team</a> 
+				Now you can proceed for <a href='/create_team'>Team creation</a> after 10 minutes, to allow the application to update your record.  
+
+				<br>
+
+				If you are the only team member of your team then proceed to create the Team, if not ensure all the other team members are successfully registered as individual and then proceed to create the Team
+				<br><br>
+			</li>
+
+			<li>
+				Visit <a href='/competitions'>competition</a> page, to view competition overview.  
+
+				<br>
+
+				Note: You cannot view competition data, leaderboard, submission pages unless you are part of a team
+				<br><br>
+			</li>
+
+			<li>
+				You can also login with your Email Id and password, to participate in <a href='/quiz_page'>Quiz</a> and <a href='/discussion'>Discussion </a>
+			</li>
+        </ul>
+
+
+		<br><br>
+        <i class="a-color-blue">Note: You will not recieve any confirmation mail on your registered email id. <a href='/contactus'>Contact Us</a>, if any doubt</i>
+        
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

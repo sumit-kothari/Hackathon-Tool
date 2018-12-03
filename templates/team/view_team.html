@@ -1,0 +1,55 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid" id="create_team_page">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--7-col">
+        
+        <h4>View your Team details</h4>
+        
+        <ul>
+            <li>
+                Team creation is mandatory to access competition and it's one time activity
+            </li>
+            <li>
+                To create a team, team members should be registered as individual and should not be member of any other team
+            </li>
+            <li>
+                Please avoid modifying your team (i.e adding or removing members); but if needed <a href="/contactus">contact us</a>
+            </li>
+        </ul>
+
+        <br>
+        <hr>
+
+        <h3>Team Name: {{team_name}}</h3>
+        
+        <hr>
+
+        <h3>Team Members</h3>
+        {% for team_member in team_members %}
+            <h5>{{team_member}}</h5>
+        {% endfor %}
+
+        <hr>
+        
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

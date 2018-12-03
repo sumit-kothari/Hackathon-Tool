@@ -1,0 +1,35 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %} 
+    <a class="mdl-navigation__link" href="/signup">Register</a>
+{% endblock %} 
+
+{% block content %}
+
+<div class="mdl-grid">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+        <h2>Unable to register, please try again.</h2>
+
+			<h4>Could be because of following reasons:</h4>
+	        <ul>
+	            <li>Invaild Email Id already registered</li>
+	            <li>Email Id already registered</li>
+	            <li>Email is not a valid</li>
+	            <li>Server's load very high </li>
+	        </ul>
+
+		<h2>
+            <br> <a style="color: blue;" href="/signup">Register Here</a> 
+        </h2>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</div>
+
+{% endblock %}

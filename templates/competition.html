@@ -1,0 +1,151 @@
+{% extends "common/base.html" %} 
+{% block title %}{{title}}{% endblock %} 
+{% block nav_title %}{{title}}{% endblock %} 
+
+{% block last_nav_link %}
+{% if final_nav_header == 'signin' %}
+    <a class="mdl-navigation__link" href="/signin">Login</a>
+{% else %}
+    <a class="mdl-navigation__link" href="/signout_confirm">{{final_nav_header}}</a>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-cell mdl-cell--11-col">
+        <h2>Competitions</h2>
+        <p>
+            Competitions are team events.
+            <br> Participant should be a member of a team, to particpate in the competition.
+            <br> Any member of a team can make submission, for the registered competition. 
+            <br> There may be multiple submissions from the members of a team.</p>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid" id="competition_page">
+
+    {% if flag_current_old %}
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--11-col">
+
+            <h3>Current Competitions</h3>
+            <hr>
+            <div class="mdl-grid">
+
+                {% for competition in competition_data['active'] %}
+    
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <ul class="demo-list-item mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                   
+                                    <div class="demo-card-square mdl-card mdl-shadow--2dp competition_card">
+                                        <div class="mdl-card__title mdl-card--expand" style="background:
+                        url('{{competition['''competition_image''']}}');">
+                                            <h2 class="mdl-card__title-text">{{ competition["competition_name"]}}</h2>
+                                        </div>
+                                        <div class="mdl-card__supporting-text">
+                                             {{competition["competition_desc"]}}
+                                        </div>
+                                        <div class="mdl-card__actions mdl-card--border">
+                                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/{{route_competition_detail}}/{{competition['competition_id']}}">
+                                                Competition Details
+                                            </a>
+                                        </div>
+                                    </div>
+                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                {% endfor %}
+
+            </div>
+
+            <h3>Previous Competitions (Registration Closed)</h3>
+            <hr>
+            <div class="mdl-grid">
+
+                {% for competition in competition_data['old'] %}
+    
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <ul class="demo-list-item mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                   
+                                    <div class="demo-card-square mdl-card mdl-shadow--2dp competition_card">
+                                        <div class="mdl-card__title mdl-card--expand" style="background:
+                        url('{{competition['''competition_image''']}}');">
+                                            <h2 class="mdl-card__title-text">{{ competition["competition_name"]}}</h2>
+                                        </div>
+                                        <div class="mdl-card__supporting-text">
+                                             {{competition["competition_desc"]}}
+                                        </div>
+                                        <div class="mdl-card__actions mdl-card--border">
+                                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/{{route_competition_detail}}/{{competition['competition_id']}}">
+                                                Competition Details
+                                            </a>
+                                        </div>
+                                    </div>
+                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    {% else %}
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-grid">
+                
+                {% for competition in competition_data %}
+    
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <ul class="demo-list-item mdl-list">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                   
+                                    <div class="demo-card-square mdl-card mdl-shadow--2dp competition_card">
+                                        <div class="mdl-card__title mdl-card--expand" style="background:
+                        url('{{competition['''competition_image''']}}');">
+                                            <h2 class="mdl-card__title-text">{{ competition["competition_name"]}}</h2>
+                                        </div>
+                                        <div class="mdl-card__supporting-text">
+                                             {{competition["competition_desc"]}}
+                                        </div>
+                                        <div class="mdl-card__actions mdl-card--border">
+                                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/{{route_competition_detail}}/{{competition['competition_id']}}">
+                                                Competition Details
+                                            </a>
+                                        </div>
+                                    </div>
+                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                {% endfor %}
+
+            </div>
+        </div>
+    {% endif %}
+
+
+    
+
+</div>
+
+{% endblock %}
