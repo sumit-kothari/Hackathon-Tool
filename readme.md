@@ -1,6 +1,5 @@
 # Hackathon Tool
 
----
 
 # Basic Overview
 
@@ -15,7 +14,6 @@ This tool can be used to host Hackathons, following are few features supported:
 
 #### [Screenshot](/screenshots)
 
----
 
 # Installation
 
