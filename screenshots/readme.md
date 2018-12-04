@@ -1,33 +1,33 @@
 # Home Page
 
-![Home](/hack_home.PNG)
+![Home](screenshots/hack_home.PNG)
 
 
 # Signup Page
 
-![Signup](/hack_signup.PNG)
+![Signup](screenshots/hack_signup.PNG)
 
 
 # Team Page
 
-![Team](/hack_team.PNG)
+![Team](screenshots/hack_team.PNG)
 
 
 # Competition Page
 
-![Competition](/hack_competition.PNG)
+![Competition](screenshots/hack_competition.PNG)
 
 
 # Competition Detail Page
 
 ## Competition Detail: Overview tab
 
-![Overview](/hack_competition_detail_overview.PNG)
+![Overview](screenshots/hack_competition_detail_overview.PNG)
 
 ## Competition Detail: Data tab
 
-![Data](/hack_competition_detail_data.PNG)
+![Data](screenshots/hack_competition_detail_data.PNG)
 
 ## Competition Detail: Submission tab
 
-![Submission](/hack_competition_detail_submission.PNG)
+![Submission](screenshots/hack_competition_detail_submission.PNG)
