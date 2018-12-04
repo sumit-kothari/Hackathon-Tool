@@ -12,7 +12,7 @@ This tool can be used to host Hackathons, following are few features supported:
 - **Competition Details**
 - **Rules page**
 
-#### [Screenshot](/screenshots)
+### [Screenshots](/screenshots/readme.md)
 
 
 # Installation
