@@ -10,7 +10,7 @@ Jinja2>=2.10.1
 jmespath==0.9.3
 MarkupSafe==1.0
 mistune==0.8.3
-numpy==1.14.1
+numpy==1.22.0
 pandas==0.22.0
 python-dateutil==2.6.1
 pytz==2018.3
